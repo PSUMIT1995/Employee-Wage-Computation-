@@ -1,2 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+namespace Employee_wage_computation
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            EmployeeWage empWage = new EmployeeWage();
+            empWage.StartWageCal();
+        }
+
+    }
+
+}
+
