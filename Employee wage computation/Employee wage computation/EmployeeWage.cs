@@ -10,10 +10,19 @@ namespace Employee_wage_computation
     {
         const int IS_PART_TIME = 1;
         const int IS_FULL_TIME = 2;
-        public static int monthlyEmployeeWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        private string company;
+        private int empRatePerHour, numOfWorkingDays, maxHoursPerMonth, totalEmpWage;
+        public EmployeeWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
-            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0, totalEmpWage;
-            while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.numOfWorkingDays = numOfWorkingDays;
+            this.maxHoursPerMonth = maxHoursPerMonth;
+        }
+        public void computeEmpWage()
+        {
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+            while (totalEmpHrs <= this.maxHoursPerMonth && totalWorkingDays < this.numOfWorkingDays)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -33,9 +42,11 @@ namespace Employee_wage_computation
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day#:" + totalWorkingDays + " Employee Hours : " + empHrs);
             }
-            totalEmpWage = totalEmpHrs * empRatePerHour;
-            Console.WriteLine(company + " Total Employee Wage : " + totalEmpWage);
-            return totalEmpWage;
+            totalEmpWage = totalEmpHrs * this.empRatePerHour;
+        }
+        public string toString()
+        {
+            return "The Total Employee Wage for Company " + this.company + " is " + this.totalEmpWage;
         }
     }
 }
