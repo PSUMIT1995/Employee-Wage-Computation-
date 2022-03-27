@@ -5,8 +5,9 @@ namespace Employee_wage_computation
     {
         static void Main(string[] args)
         {
-            EmployeeWage empWage = new EmployeeWage();
-            empWage.StartWageCal();
+            EmployeeWage wagecomputation = new EmployeeWage();
+            wagecomputation.CalculateEmpWage();
+
         }
 
     }
