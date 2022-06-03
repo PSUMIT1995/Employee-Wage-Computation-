@@ -13,7 +13,7 @@ namespace Employee_wage_computation
 
         private int numOfCompany = 0;
         private CompanyEmpWage[] companyEmpWageArray;
-
+        private CompanyEmpWage companyEmpWage;
 
         public EmpWageBuildArray()
         {
@@ -29,8 +29,11 @@ namespace Employee_wage_computation
             for (int i = 0; i < numOfCompany; i++)
             {
                 companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(this.companyEmpWageArray[i]));
+
                 Console.WriteLine(this.companyEmpWageArray[i].toString());
             }
+
+
         }
 
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
