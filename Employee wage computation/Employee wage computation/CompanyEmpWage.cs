@@ -8,9 +8,6 @@ namespace Employee_wage_computation
 {
     public class CompanyEmpWage
     {
-        public const int FULL_TIME = 1;
-        public const int PART_TIME = 2;
-
         public String COMPANY_NAME;
         public int EMP_RATE_PER_HR;
         public int NUM_OF_WORKINGDAYS;
@@ -34,3 +31,4 @@ namespace Employee_wage_computation
         }
     }
 }
+   

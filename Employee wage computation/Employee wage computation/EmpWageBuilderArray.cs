@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Employee_wage_computation
 {
-    public class EmpWageBuilderArray
+    public class EmpWageBuildArray : IComputeEmpWage
     {
-
         public const int FULL_TIME = 1;
         public const int PART_TIME = 2;
 
@@ -16,7 +15,7 @@ namespace Employee_wage_computation
         private CompanyEmpWage[] companyEmpWageArray;
 
 
-        public EmpWageBuilderArray()
+        public EmpWageBuildArray()
         {
             this.companyEmpWageArray = new CompanyEmpWage[5];
         }
@@ -34,7 +33,7 @@ namespace Employee_wage_computation
             }
         }
 
-        public int computeEmpWage(CompanyEmpWage companyEmpWage)
+        private int computeEmpWage(CompanyEmpWage companyEmpWage)
         {
             //Initialize local variable
             int EMP_HRS = 0;
@@ -74,5 +73,6 @@ namespace Employee_wage_computation
             //Calculating Daily Wages of Employee
             return TOTAL_HRS * companyEmpWage.EMP_RATE_PER_HR;
         }
+
     }
 }
